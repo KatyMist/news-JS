@@ -4,3 +4,5 @@ declare const process: {
         API_KEY: string;
     };
 };
+
+declare module '*.css';
