@@ -102,3 +102,20 @@ main {
     margin: 16px 0 0;
     text-align: center;
 }
+
+.footer__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.footer__github {
+    justify-self: start;
+}
+
+.footer__year {
+    justify-self: center;
+}
+
+.footer__rss {
+    justify-self: end;
+}
