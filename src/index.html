@@ -1,33 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>NewsPortal</title>
+        <title>News Portal</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     </head>
     <body>
-        <header>
-            <h1>News Portal</h1>
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">News<span>Portal</span></h1>
+                <p class="header__subtitle">Fresh headlines from sources all over the world</p>
+            </div>
         </header>
-        <main>
-            <div class="sources buttons"></div>
-            <div class="news"></div>
+        <main class="container">
+            <section class="section">
+                <h2 class="section__title">Sources</h2>
+                <div class="sources buttons"></div>
+            </section>
+            <section class="section">
+                <h2 class="section__title">Latest news</h2>
+                <div class="news">
+                    <p class="news__empty">Choose a source above to see the latest news</p>
+                </div>
+            </section>
         </main>
-        <footer>
-            <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
-            </p>
+        <footer class="footer">
+            <div class="container footer__inner">
+                <a class="footer__github" href="https://github.com/KatyMist" target="_blank" rel="noopener">GitHub: KatyMist</a>
+                <span class="footer__year">2026</span>
+                <a class="footer__rss" href="https://rs.school/courses/javascript" target="_blank" rel="noopener">
+                    <img src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg" alt="RS School" width="40" height="40" />
+                </a>
+            </div>
+            <p class="copyright">Powered by <a href="https://newsapi.org" target="_blank" rel="noopener">NewsAPI</a></p>
         </footer>
 
         <template id="sourceItemTemp">
-            <div class="source__item">
+            <button class="source__item" type="button">
                 <span class="source__item-name"></span>
-            </div>
+            </button>
         </template>
 
         <template id="newsItemTemp">
-            <div class="news__item">
+            <article class="news__item">
                 <div class="news__meta">
                     <div class="news__meta-photo"></div>
                     <ul class="news__meta-details">
@@ -40,10 +58,10 @@
                     <h3 class="news__description-source"></h3>
                     <p class="news__description-content"></p>
                     <p class="news__read-more">
-                        <a href="#">Read More</a>
+                        <a href="#" target="_blank" rel="noopener">Read More</a>
                     </p>
                 </div>
-            </div>
+            </article>
         </template>
     </body>
 </html>
