@@ -12,6 +12,16 @@ class News {
         const newsContainer = document.querySelector<HTMLElement>('.news');
         if (!newsItemTemp || !newsContainer) return;
 
+        newsContainer.innerHTML = '';
+
+        if (!news.length) {
+            const empty = document.createElement('p');
+            empty.className = 'news__empty';
+            empty.textContent = 'No news found for this source';
+            newsContainer.append(empty);
+            return;
+        }
+
         news.forEach((item, idx) => {
             const newsClone = newsItemTemp.content.cloneNode(true) as DocumentFragment;
 
@@ -30,7 +40,6 @@ class News {
             fragment.append(newsClone);
         });
 
-        newsContainer.innerHTML = '';
         newsContainer.appendChild(fragment);
     }
 

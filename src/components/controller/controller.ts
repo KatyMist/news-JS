@@ -15,6 +15,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id');
                 if (sourceId && newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
+                    this.setActive(newsContainer, target);
                     super.getResp<INewsResponse>(
                         {
                             endpoint: Endpoint.Everything,
@@ -27,6 +28,13 @@ class AppController extends AppLoader {
             }
             target = target.parentNode as HTMLElement;
         }
+    }
+
+    private setActive(container: HTMLElement, activeItem: HTMLElement): void {
+        container
+            .querySelectorAll('.source__item--active')
+            .forEach((item: Element) => item.classList.remove('source__item--active'));
+        activeItem.classList.add('source__item--active');
     }
 }
 
